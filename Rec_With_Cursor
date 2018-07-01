@@ -1,0 +1,22 @@
+create or replace procedure rec_cursor
+(
+c_id in customer.id%type
+)
+is
+cursor c is select id from customer
+where id=c_id;
+c_rec c%rowtype;
+
+begin
+open c;
+
+loop
+fetch c
+into c_rec;
+dbms_output.put_line('id is'|| c_rec.id);
+
+end loop;
+close c;
+
+end;
+/
