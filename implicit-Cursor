@@ -1,0 +1,4 @@
+if sql%found then
+total_rows:=sql%rowcount;
+dbms_output.put_line(total_rows || 'customers selected');
+end if;
